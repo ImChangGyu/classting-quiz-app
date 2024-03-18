@@ -14,7 +14,7 @@
 -   @tanstack/react-query
 -   jotai
 -   @testing-library/react
--   jest
+-   vitest
 
 ### 테스트 케이스로 선정한 이유
 
