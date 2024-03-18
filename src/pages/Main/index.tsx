@@ -16,6 +16,7 @@ export default function MainPage() {
 					localStorage.clear();
 					navigate("/quiz");
 				}}
+				data-testid="quiz-button"
 			>
 				퀴즈 풀기
 			</Button>

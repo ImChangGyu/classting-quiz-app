@@ -7,9 +7,17 @@ interface QuizItemProps {
 	isWrong?: boolean;
 	onClick?: (selectedValue: string) => void;
 	disabled?: boolean;
+	dataTestId?: string;
 }
 
-export default function QuizItem({ answer, isAnswer, isWrong, onClick, disabled }: QuizItemProps) {
+export default function QuizItem({
+	answer,
+	isAnswer,
+	isWrong,
+	onClick,
+	disabled,
+	dataTestId,
+}: QuizItemProps) {
 	return (
 		<button
 			className={cn(
@@ -19,6 +27,7 @@ export default function QuizItem({ answer, isAnswer, isWrong, onClick, disabled 
 			)}
 			onClick={() => onClick && onClick(answer)}
 			disabled={disabled}
+			data-testid={dataTestId}
 		>
 			{sanitize(answer)}
 		</button>

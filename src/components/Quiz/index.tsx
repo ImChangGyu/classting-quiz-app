@@ -41,11 +41,19 @@ export default function Quiz() {
 			<QuizList quiz={currentQuiz} onAnswer={onAnswer} selectedAnswer={selectedAnswer} />
 			<div className="w-full h-[15%] flex justify-center items-center">
 				{currentIndex + 1 < QUIZ_LENGTH ? (
-					<Button onClick={onNextQuiz} disabled={selectedAnswer === ""}>
+					<Button
+						onClick={onNextQuiz}
+						disabled={selectedAnswer === ""}
+						data-testid="next-button"
+					>
 						다음 문제
 					</Button>
 				) : (
-					<Button onClick={onResult} disabled={selectedAnswer === ""}>
+					<Button
+						onClick={onResult}
+						disabled={selectedAnswer === ""}
+						data-testid="result-button"
+					>
 						결과 보기
 					</Button>
 				)}

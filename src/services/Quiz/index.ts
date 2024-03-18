@@ -93,7 +93,6 @@ export function useIncorrectQuiz() {
 	}
 
 	useEffect(() => {
-		console.log(incorrectQuizList[currentIndex]);
 		setCurrentIncorrectQuiz(incorrectQuizList[currentIndex]);
 	}, [incorrectQuizList, currentIndex]);
 

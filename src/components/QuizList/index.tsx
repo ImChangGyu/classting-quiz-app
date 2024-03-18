@@ -20,6 +20,7 @@ export default function QuizList({ quiz, onAnswer, selectedAnswer }: QuizListPro
 						answer === selectedAnswer && quiz.incorrect_answers.includes(selectedAnswer)
 					}
 					disabled={selectedAnswer !== ""}
+					dataTestId={index === 0 ? "select-answer" : ""}
 				/>
 			))}
 		</div>

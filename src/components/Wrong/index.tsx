@@ -11,7 +11,7 @@ export default function Wrong() {
 		onNextIncorrectQuiz,
 		onReturnMain,
 	} = useIncorrectQuiz();
-	console.log(currentIncorrectQuiz);
+
 	return (
 		<div className="w-full h-full flex flex-col">
 			<Question
@@ -21,18 +21,32 @@ export default function Wrong() {
 			<div className="w-full h-2/5 flex p-4 gap-4">
 				<div className="w-[50%] h-[392px]">
 					<p>내가 선택한 답</p>
-					<QuizItem answer={currentIncorrectQuiz?.myAnswer} isWrong disabled />
+					<QuizItem
+						answer={currentIncorrectQuiz?.myAnswer}
+						isWrong
+						disabled
+						dataTestId="my-answer"
+					/>
 				</div>
 				<div className="w-[50%] h-[392px]">
 					<p>정답</p>
-					<QuizItem answer={currentIncorrectQuiz?.correctAnswer} isAnswer disabled />
+					<QuizItem
+						answer={currentIncorrectQuiz?.correctAnswer}
+						isAnswer
+						disabled
+						dataTestId="correct-answer"
+					/>
 				</div>
 			</div>
 			<div className="w-full h-[30%] flex justify-center items-center">
 				{currentIndex + 1 < incorrectQuizCount ? (
-					<Button onClick={onNextIncorrectQuiz}>다음 오답</Button>
+					<Button onClick={onNextIncorrectQuiz} data-testid="next-incorrect-button">
+						다음 오답
+					</Button>
 				) : (
-					<Button onClick={onReturnMain}>메인으로</Button>
+					<Button onClick={onReturnMain} data-testid="navigate-main-button">
+						메인으로
+					</Button>
 				)}
 			</div>
 		</div>
